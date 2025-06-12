@@ -1,20 +1,16 @@
-import { useState } from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
+import { ApolloProvider } from '@apollo/client';
+import client from '@/abis/apollo';
+import Chat from '@/components/Chat';
 
-const App = () => {
-  const [data, setData] = useState({ info: '京程一灯' });
-  console.log('🐻 App component rendered');
+function App() {
   return (
-    <>
-      <h1
-        className="text-4xl text-[#09F]"
-        onClick={() => {
-          setData({ info: '京程一灯' });
-        }}
-      >
-        {data.info}
-      </h1>
-    </>
+    <ApolloProvider client={client}>
+      <ChakraProvider>
+        <Chat />
+      </ChakraProvider>
+    </ApolloProvider>
   );
-};
-App.whyDidYouRender = true; // Enable WDYR for this component
+}
+
 export default App;

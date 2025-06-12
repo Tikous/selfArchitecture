@@ -1,6 +1,6 @@
-import App from '@pages/App'
+import App from '@pages/App';
 import './index.css';
-import './wdyr'
+import './wdyr';
 import { createRoot } from 'react-dom/client';
 
 const container = document.getElementById('app');

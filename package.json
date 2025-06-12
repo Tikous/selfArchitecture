@@ -8,15 +8,23 @@
     "prod": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:uidiff": "backstop test",
-    "lint:fix": "tsc --noEmit & eslint ./src --ext .ts,.tsx,.js --fix",
+    "lint:fix": "tsc --noEmit && eslint ./src --ext .ts,.tsx,.js,.jsx --fix",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "prepare": "husky"
   },
   "license": "MIT",
   "dependencies": {
+    "@apollo/client": "^3.13.8",
+    "@chakra-ui/react": "^3.21.0",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
     "@welldone-software/why-did-you-render": "^10.0.1",
+    "framer-motion": "^10.18.0",
+    "graphql": "^16.11.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-markdown": "^10.1.0",
+    "styled-components": "^6.1.18"
   },
   "devDependencies": {
     "@soda/friendly-errors-webpack-plugin": "^1.8.1",
