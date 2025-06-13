@@ -22,5 +22,12 @@
     "sourceType": "module",
     "project": "./tsconfig.eslint.json"
   },
-  "rules": {}
+  "rules": {
+    "prettier/prettier": "off",
+    "comma-dangle": "off",
+    "object-curly-spacing": "off",
+    "react/jsx-curly-spacing": "off",
+    "react/jsx-tag-spacing": "off",
+    "react/jsx-wrap-multilines": "off"
+  }
 }

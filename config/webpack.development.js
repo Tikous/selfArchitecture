@@ -43,6 +43,6 @@ module.exports = {
       },
       clearConsole: true
     }),
-    new BundleAnalyzerPlugin()
+    // new BundleAnalyzerPlugin()
   ]
 }

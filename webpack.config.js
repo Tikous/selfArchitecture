@@ -10,6 +10,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const _modeflag = _mode === 'production' ? true : false
 const { ThemedProgressPlugin } = require('themed-progress-plugin')
+// 添加 dotenv-webpack 插件
+const Dotenv = require('dotenv-webpack')
 
 const webpackBaseConfig = {
   entry: {
@@ -21,7 +23,7 @@ const webpackBaseConfig = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
+        test: /\.(ts|tsx|jsx|js)$/,
         exclude: /node_modules/,
         use: {
           loader: 'swc-loader'
@@ -70,7 +72,12 @@ const webpackBaseConfig = {
       chunkFilename: _modeflag ? 'styles/[name].[contenthash:5].css' : 'style/[name].css',
       ignoreOrder: true
     }),
-    new ThemedProgressPlugin()
+    new ThemedProgressPlugin(),
+    // 添加 dotenv-webpack 插件配置
+    new Dotenv({
+      systemvars: true, // 加载所有系统环境变量
+      path: resolve(process.cwd(), '.env') // 指定 .env 文件路径
+    })
   ]
 }
 module.exports = merge.default(webpackBaseConfig, _mergeConfig)
