@@ -38,6 +38,7 @@ const webpackBaseConfig = {
         use: [
           MiniCssExtractPlugin.loader,
           { loader: 'css-loader', options: { importLoaders: 1 }},
+          // 可编译tailwindcss
           'postcss-loader'
         ],
       }

@@ -6,6 +6,7 @@ import { Draft, freeze, produce } from 'immer'
 export type DraftFunction<S> = (draft: Draft<S>) => void
 export type Updater<S> = (arg: S | DraftFunction<S>) => void
 export type ImmerHook<S> = [S, Updater<S>]
+// ts函数签名
 export function useImmer<S = unknown>(initialValue: S | (() => S)) : ImmerHook<S>
 
 export function useImmer<T>(initialValue: T) {
