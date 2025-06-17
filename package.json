@@ -6,11 +6,17 @@
     "dev": "webpack --mode development",
     "serve": "webpack serve --mode development",
     "prod": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:e2e": "cypress open",
     "test:uidiff": "backstop test",
     "lint:fix": "tsc --noEmit && eslint ./src --ext .ts,.tsx,.js,.jsx --fix",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "jest --collectCoverage --reporters default jest-stare",
+    "test:ui": "majestic"
+  },
+  "jest-stare": {
+    "coverageLink": "../jest-coverage/lcov-report/index.html",
+    "resultDir": "docs/jest-stare"
   },
   "license": "MIT",
   "dependencies": {
@@ -20,18 +26,24 @@
     "@emotion/styled": "^11.11.0",
     "@mastra/client-js": "^0.10.4",
     "@welldone-software/why-did-you-render": "^10.0.1",
+    "cypress": "^14.4.1",
+    "ethers": "^6.14.3",
     "framer-motion": "^10.18.0",
     "graphql": "^16.11.0",
     "immer": "^10.1.1",
+    "lucide-react": "^0.515.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.6.2",
     "styled-components": "^6.1.18"
   },
   "devDependencies": {
     "@soda/friendly-errors-webpack-plugin": "^1.8.1",
     "@swc/core": "^1.12.0",
+    "@swc/jest": "^0.2.38",
     "@tailwindcss/postcss": "^4.1.9",
+    "@types/jest": "^30.0.0",
     "@types/react": "^19.1.7",
     "@types/react-dom": "^19.1.6",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
@@ -52,6 +64,8 @@
     "html-webpack-plugin": "^5.6.3",
     "husky": "^9.1.7",
     "jest": "^30.0.0",
+    "jest-stare": "^2.5.2",
+    "majestic": "^1.8.1",
     "mini-css-extract-plugin": "^2.9.2",
     "node-notifier": "^10.0.1",
     "postcss": "^8.5.5",
