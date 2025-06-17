@@ -23,8 +23,15 @@
       "@hooks/*": ["src/hooks/*"],
       "@utils/*": ["src/utils/*"],
       "@components/*": ["src/components/*"],
-      "@abi/*": ["src/abi/*"],
-      "connections/*": ["src/connections/*"]
+      "@layouts/*": ["src/layouts/*"],
+      "@assets/*": ["src/assets/*"],
+      "@states/*": ["src/states/*"],
+      "@service/*": ["src/service/*"],
+      "@lib/*": ["src/lib/*"],
+      "@constants/*": ["src/constants/*"],
+      "@connections/*": ["src/connections/*"],
+      "@abis/*": ["src/abis/*"],
+      "@types/*": ["src/types/*"]
     }
   },
   "include": ["src", "tests"],

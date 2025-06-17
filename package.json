@@ -22,6 +22,7 @@
     "@welldone-software/why-did-you-render": "^10.0.1",
     "framer-motion": "^10.18.0",
     "graphql": "^16.11.0",
+    "immer": "^10.1.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-markdown": "^10.1.0",
